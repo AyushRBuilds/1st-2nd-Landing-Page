@@ -1,0 +1,124 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Hero section</title>
+    <link rel="stylesheet" href="CSS1.css" />
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <nav>
+      <div
+        style="
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: -1px;
+          color: #b481ff;
+          font-family: serif;
+          text-align: center;
+        "
+      >
+        Desidsign Ui
+      </div>
+      <!-- <div>
+            <ul>
+                <li class="hover-li">Home</li>
+                <li class="hover-li" >About us</li>
+                <li class="hover-li">Contact us</li>
+            </ul>
+        </div>
+        <div>
+            <button class="nav-btn">Sign up</button>
+            <button class="nav-btn">Login</button>
+
+        </div> -->
+    </nav>
+
+    <section class="hero">
+      <div class="announcement">
+        <a href="#" class="announcement-link">
+          <span class="announcement-text">New features available now</span>
+          <span class="announcement-button">
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentcolor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 12 4-4-4-4" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="glow-cursor" style="left: 676px; top: 55.4875px"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hover-word">Now</span>
+          <span class="hover-word">it's</span>
+          <span class="hover-word">easier</span>
+          <span class="hover-word">than</span>
+          <span class="hover-word">ever</span>
+          <span class="hover-word">to</span><br />
+          <span class="hover-word">build</span>
+          <span class="hover-word">products</span>
+        </h1>
+
+        <p class="hero-description">
+          Create stunning websites and applications with our modern design
+          system.
+          <br />Fast,flexible, and beautiful by default.
+        </p>
+        <a href="#" class="cta-button">
+          Get Started &nbsp;
+          <span class="ca-button">
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 12 4-4-4-4" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <script>
+      const glow = document.querySelector(".cursor-glow");
+
+      let targetX = window.innerWidth / 2;
+      let targetY = window.innerHeight / 2;
+      let currentX = targetX;
+      let currentY = targetY;
+
+      document.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+      });
+
+      function animate() {
+        // Lower factor = slower/smoother movement
+        currentX += (targetX - currentX) * 0.03;
+        currentY += (targetY - currentY) * 0.03;
+
+        glow.style.left = `${currentX}px`;
+        glow.style.top = `${currentY}px`;
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>

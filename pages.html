@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overfood - Responsive Layout</title>
+  <link rel="stylesheet" href="globe.css" />
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <img src="https://omnifood.dev/img/omnifood-logo.png" alt="Overfood Logo" class="logo" />
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Meals</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><span class="nav-btn">Try for free</span></li>
+          <li><button id="theme-toggle">🌙 Toggle Theme</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-block">
+        <div class="hero-about">
+          <h1 class="hero-title">
+            A healthy meal <br />
+            delivered to your door,<br />
+            every single day
+          </h1>
+          <p class="hero-description">
+            The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal tastes and nutritional needs.
+          </p>
+          <button type="button" class="btn-full">Start Eating Well</button>
+          <button type="button" class="btn-outline">Learn more</button>
+
+          <div class="testimonial-faces">
+            <img src="https://omnifood.dev/img/customers/customer-1.jpg" alt="User 1" class="face-1" />
+            <img src="https://omnifood.dev/img/customers/customer-2.jpg" alt="User 2" />
+            <img src="https://omnifood.dev/img/customers/customer-3.jpg" alt="User 3" />
+            <img src="https://omnifood.dev/img/customers/customer-4.jpg" alt="User 4" class="face-4" />
+            <p><span>250,000+</span> meals delivered last year!</p>
+          </div>
+        </div>
+
+        <div class="hero-img">
+          <img src="https://omnifood.dev/img/hero.webp" alt="Healthy meals preview" />
+        </div>
+      </div>
+    </section>
+
+    <section class="FEATUREDIN">
+      <div class="feature-block">
+        <h2>AS FEATURED IN</h2>
+        <div class="featured-logos">
+          <img src="https://omnifood.dev/img/logos/techcrunch.png" alt="TechCrunch" width="80" class="feat" />
+          <img src="https://omnifood.dev/img/logos/business-insider.png" alt="Business Insider" width="80" class="feat"/>
+          <img src="https://omnifood.dev/img/logos/the-new-york-times.png" alt="The New York Times" width="80"  class = "feat"/>
+          <img src="https://omnifood.dev/img/logos/forbes.png" alt="Forbes" width="80" class="feat"/>
+          <img src="https://omnifood.dev/img/logos/usa-today.png" alt="USA Today" width="80" class="feat" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById('theme-toggle');
+
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+      });
+      toggleBtn.innerText =
+  document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+    //   Load saved theme
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+      toggleBtn.innerText =
+        document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+  </script>
+</body>
+</html>
